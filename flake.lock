@@ -1,0 +1,96 @@
+{
+  "nodes": {
+    "copilot-chat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1768758934,
+        "narHash": "sha256-MKGkcgyIwRDQs31yqaNrTvJOJlL5FErQjbINeJPlkiQ=",
+        "owner": "CopilotC-Nvim",
+        "repo": "CopilotChat.nvim",
+        "rev": "07dcc188bc488b2dafa9324bd42088640bee3d19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CopilotC-Nvim",
+        "ref": "main",
+        "repo": "CopilotChat.nvim",
+        "type": "github"
+      }
+    },
+    "nixCats": {
+      "locked": {
+        "lastModified": 1768727497,
+        "narHash": "sha256-oBhjXBWUMRSCSKobRHMb8X+WIetU76SdZAOtvVy+000=",
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim",
+        "rev": "742da085b07b845d7987d771694742e6432b10ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "nixCats-nvim",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1768564909,
+        "narHash": "sha256-Kell/SpJYVkHWMvnhqJz/8DqQg2b6PguxVWOuadbHCc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e4bae1bd10c9c57b2cf517953ab70060a828ee6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "org-bullets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737617809,
+        "narHash": "sha256-/l8IfvVSPK7pt3Or39+uenryTM5aBvyJZX5trKNh0X0=",
+        "owner": "nvim-orgmode",
+        "repo": "org-bullets.nvim",
+        "rev": "21437cfa99c70f2c18977bffd423f912a7b832ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-orgmode",
+        "repo": "org-bullets.nvim",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "copilot-chat": "copilot-chat",
+        "nixCats": "nixCats",
+        "nixpkgs": "nixpkgs",
+        "org-bullets": "org-bullets",
+        "treesitter-textobjects": "treesitter-textobjects"
+      }
+    },
+    "treesitter-textobjects": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1768784270,
+        "narHash": "sha256-uLugBNNJUqu4zEtPB2fy+abEOORnsmrznGy8VIvC9bQ=",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter-textobjects",
+        "rev": "4d55f63252e04c5212daed958e4e940915ff16ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "ref": "main",
+        "repo": "nvim-treesitter-textobjects",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
