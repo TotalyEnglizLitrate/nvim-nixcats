@@ -12,6 +12,7 @@ require('tokyonight').setup({
       bold = true
     },
     functions = { bold = true },
+    keywords = { bold = true },
     sidebars = 'transparent',
     floats = 'transparent',
   },

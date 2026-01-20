@@ -1,6 +1,8 @@
 require('bufferline').setup({
-  options = { diagnostics = 'nvim_lsp' },
-  separator_style = 'slant',
+  options = {
+    diagnostics = 'nvim_lsp',
+    separator_style = 'slant'
+  },
 })
 
 vim.keymap.set('n', '<leader>bp', '<cmd>:BufferLinePick<cr>', {desc = 'Buffer Line Pick'})
