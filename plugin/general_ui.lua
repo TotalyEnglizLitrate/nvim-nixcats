@@ -2,9 +2,17 @@ if not nixCats('general') then
   return
 end
 
+local transparent = true
+local style_str = 'transparent'
+
+if vim.g.neovide then
+  transparent = false
+  style_str = 'dark'
+end
+
 require('tokyonight').setup({
   style = 'night',
-  transparent = true,
+  transparent = transparent,
   terminal_colors = true,
   styles = {
     comments = {
@@ -13,13 +21,13 @@ require('tokyonight').setup({
     },
     functions = { bold = true },
     keywords = { bold = true },
-    sidebars = 'transparent',
-    floats = 'transparent',
+    sidebars = style_str,
+    floats = style_str,
   },
   lualine_bold = true
 })
 
-vim.cmd('colorscheme tokyonight-night')
+vim.cmd('colorscheme tokyonight')
 
 vim.g.startuptime_event_width = 0
 vim.g.startuptime_tries = 10
