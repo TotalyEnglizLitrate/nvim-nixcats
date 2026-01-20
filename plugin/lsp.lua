@@ -72,6 +72,7 @@ servers.rust_analyzer = {}
 servers.typst_lsp = {}
 servers.typos_lsp = {}
 servers.markdown_oxide = {}
+servers.ltex_plus = {}
 
 vim.lsp.config('*', {
   -- capabilities = capabilities,

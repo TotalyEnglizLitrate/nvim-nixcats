@@ -29,6 +29,7 @@
         black
         markdown-oxide
         nodejs-slim # copilot-lua
+        ltex-ls-plus
       ];
     };
 
