@@ -37,7 +37,7 @@ require("snacks").setup({
   scroll = {},
   quickfile = {}
 })
-vim.keymap.set({"n", "v", "i"}, "<c-\\>", function()
+vim.keymap.set({"n", "v", "i", "t"}, "<c-\\>", function()
   if Snacks.terminal.list()[1] then
     Snacks.terminal.toggle()
   else
