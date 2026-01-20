@@ -1,3 +1,7 @@
+if not nixCats('general') then
+  return
+end
+
 local highlights = {
   background = { bg = "none" },
   fill = { bg = "none" },
