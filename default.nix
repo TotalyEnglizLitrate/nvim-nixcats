@@ -66,6 +66,7 @@
         nvim-dap-ui
         nvim-dap-virtual-text
         cord-nvim
+        nvim-web-devicons
       ];
     };
 

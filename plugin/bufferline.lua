@@ -5,7 +5,7 @@ end
 local highlights = {
   background = { bg = "none" },
   fill = { bg = "none" },
-  buffer_selected = { bg = "none", fg = "#fab387" },
+  buffer_selected = { bg = "none", fg = "#fab387", bold = true, italic = false },
   buffer_visible = { bg = "none", fg = "#a6adc8" },
   close_button = { bg = "none" },
   close_button_selected = { bg = "none" },
@@ -51,7 +51,9 @@ local highlights = {
 local sep_style = ""
 
 if vim.g.neovide then
-  highlights = {}
+  highlights = {
+    buffer_selected = { bold = true, italic = false },
+  }
   sep_style = "slant"
 end
 
@@ -60,6 +62,25 @@ require("bufferline").setup({
   options = {
     diagnostics = "nvim_lsp",
     separator_style = sep_style,
+    numbers = function(opts)
+      return string.format('%s.', opts.ordinal)
+    end,
+    indicator = {
+      icon = "▎",
+      style = "icon",
+      close_button_visible = false,
+    },
+    offsets = {
+      {
+	filetype = "snacks-picker-list",
+	text = "File Explorer",
+	text_align = "left",
+	separator = true
+      }
+    },
+    show_buffer_icons = true,
+    color_icons = true,
+    show_buffer_close_icons = false,
   },
 })
 
