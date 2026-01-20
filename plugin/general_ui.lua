@@ -2,24 +2,21 @@ if not nixCats('general') then
   return
 end
 
-if vim.g.neovide then
-  vim.g.neovide_opacity = 0.9
-  vim.g.neovide_normal_opacity = 0.9
-  vim.g.neovide_text_gamma = 1.0
-  vim.g.neovide_text_contrast = 1.0
-  vim.o.winblend = 70
-  vim.o.pumblend = 70
-else
-  require('tokyonight').setup({
-    style = 'night',
-    transparent = true,
-    terminal_colors = true,
-    styles = {
-      sidebars = 'transparent',
-      floats = 'transparent',
+require('tokyonight').setup({
+  style = 'night',
+  transparent = true,
+  terminal_colors = true,
+  styles = {
+    comments = {
+      italic = true,
+      bold = true
     },
-  })
-end
+    functions = { bold = true },
+    sidebars = 'transparent',
+    floats = 'transparent',
+  },
+  lualine_bold = true
+})
 
 vim.cmd('colorscheme tokyonight-night')
 
