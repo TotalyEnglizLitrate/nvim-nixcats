@@ -48,6 +48,7 @@
         mini-ai
         mini-icons
         mini-pairs
+        render-markdown-nvim
         nvim-lspconfig
         vim-startuptime
         blink-cmp
