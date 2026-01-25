@@ -14,7 +14,11 @@
       flake = false;
     };
     copilot-chat = {
-      url = "github:CopilotC-Nvim/CopilotChat.nvim/main";
+      url = "github:CopilotC-Nvim/CopilotChat.nvim";
+      flake = false;
+    };
+    juno = {
+      url = "github:TotalyEnglizLitrate/juno.nvim";
       flake = false;
     };
   };
