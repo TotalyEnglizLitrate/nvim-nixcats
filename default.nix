@@ -25,6 +25,7 @@
         rust-analyzer
         basedpyright
         clang-tools
+        dart
         typst
         typos-lsp
         black
