@@ -30,7 +30,6 @@
         black
         markdown-oxide
         nodejs-slim # copilot-lua
-        ltex-ls-plus
         (texliveFull.withPackages (ps: with ps; [ fontawesome6 ]))
       ];
     };
