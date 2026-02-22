@@ -116,7 +116,12 @@
   defaultPackageName = "nvim";
 
   # return our package!
-  nvim = utils.baseBuilder luaPath { inherit pkgs; } categoryDefinitions packageDefinitions defaultPackageName;
+  nvim = (utils.baseBuilder luaPath { inherit pkgs; } categoryDefinitions packageDefinitions defaultPackageName)
+    //
+    { 
+      pname = defaultPackageName;
+      version = pkgs.neovim.version;
+    };
 in {
   inherit nvim;
 }
