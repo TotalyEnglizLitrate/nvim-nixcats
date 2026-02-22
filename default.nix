@@ -26,6 +26,8 @@
         basedpyright
         clang-tools
         dart
+        gopls
+        go
         typst
         typos-lsp
         black

@@ -73,6 +73,7 @@ servers.typst_lsp = {}
 servers.typos_lsp = {}
 servers.markdown_oxide = {}
 servers.dartls = {}
+servers.gopls = {}
 
 vim.lsp.config('*', {
   -- capabilities = capabilities,
