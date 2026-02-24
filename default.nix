@@ -28,11 +28,14 @@
         dart
         gopls
         go
+        nodejs
+        pnpm
+        typescript
+        typescript-language-server
         typst
         typos-lsp
         black
         markdown-oxide
-        nodejs-slim # copilot-lua
         (texliveFull.withPackages (ps: with ps; [ fontawesome6 ]))
       ];
     };
