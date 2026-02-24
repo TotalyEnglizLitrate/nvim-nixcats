@@ -38,12 +38,16 @@ require("snacks").setup({
   quickfile = {}
 })
 vim.keymap.set({"n", "v", "i", "t"}, "<c-\\>", function()
-  if Snacks.terminal.list()[1] then
+  if Snacks.terminal.list() then
     Snacks.terminal.toggle()
   else
     Snacks.terminal.open()
   end
+end, { desc = 'Snacks Toggle Terminal' })
+vim.keymap.set({"n", "v", "i", "t"}, "<c-\\>", function()
+  Snacks.terminal.open()
 end, { desc = 'Snacks Terminal' })
+
 vim.keymap.set("n", "<leader>gg", Snacks.lazygit.open, { desc = 'Snacks LazyGit' })
 vim.keymap.set("n", "<leader>e", Snacks.explorer.open , { desc = 'Snacks file explorer' })
 -- find
