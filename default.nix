@@ -33,6 +33,7 @@
         typescript
         typescript-language-server
         typst
+        tinymist
         typos-lsp
         black
         markdown-oxide
