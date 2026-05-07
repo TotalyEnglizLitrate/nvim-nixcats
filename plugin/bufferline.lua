@@ -50,12 +50,10 @@ local highlights = {
 
 local sep_style = ""
 
-if vim.g.neovide then
-  highlights = {
-    buffer_selected = { bold = true, italic = false },
-  }
-  sep_style = "slant"
-end
+highlights = {
+  buffer_selected = { bold = true, italic = false },
+}
+sep_style = "slant"
 
 require("bufferline").setup({
   highlights = highlights,

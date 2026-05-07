@@ -5,11 +5,6 @@ end
 local transparent = true
 local style_str = 'transparent'
 
-if vim.g.neovide then
-  transparent = false
-  style_str = 'dark'
-end
-
 require('tokyonight').setup({
   style = 'night',
   transparent = transparent,
