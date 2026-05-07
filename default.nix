@@ -1,11 +1,11 @@
 {
-  pkgs ? import <nixpkgs> {}
-  , nixCats ? throw "nixCats input is required"
-  , treesitter-textobjects ? throw "treesitter-textobjects input is required"
-  , org-bullets ? throw "org-bullets input is required"
-  , copilot-chat ? throw "copilot-chat input is required"
-  , juno ? throw "juno input is required"
-  , ...
+  pkgs ? import <nixpkgs> {},
+  nixCats ? throw "nixCats input is required",
+  treesitter-textobjects ? throw "treesitter-textobjects input is required",
+  org-bullets ? throw "org-bullets input is required",
+  copilot-chat ? throw "copilot-chat input is required",
+  juno ? throw "juno input is required",
+  ...
 }: let
   # get the nixCats library with the builder function (and everything else) in it
   utils = import nixCats;
@@ -13,7 +13,15 @@
   luaPath = ./.;
 
   # see :help nixCats.flake.outputs.categories
-  categoryDefinitions = { pkgs, settings, categories, extra, name, mkPlugin, ... }@packageDef: {
+  categoryDefinitions = {
+    pkgs,
+    settings,
+    categories,
+    extra,
+    name,
+    mkPlugin,
+    ...
+  } @ packageDef: {
     lspsAndRuntimeDeps = {
       general = with pkgs; [
         lazygit
@@ -37,7 +45,7 @@
         typos-lsp
         black
         markdown-oxide
-        (texliveFull.withPackages (ps: with ps; [ fontawesome6 ]))
+        (texliveFull.withPackages (ps: with ps; [fontawesome6]))
       ];
     };
 
@@ -93,7 +101,12 @@
     # These are the names of your packages
     # you can include as many as you wish.
     # each of these sets are also written into the nixCats plugin for querying within lua.
-    nvim = {pkgs, name, mkPlugin, ... }: {
+    nvim = {
+      pkgs,
+      name,
+      mkPlugin,
+      ...
+    }: {
       settings = {
         suffix-path = true;
         suffix-LD = true;
@@ -120,9 +133,9 @@
   defaultPackageName = "nvim";
 
   # return our package!
-  nvim = (utils.baseBuilder luaPath { inherit pkgs; } categoryDefinitions packageDefinitions defaultPackageName)
-    //
-    { 
+  nvim =
+    (utils.baseBuilder luaPath {inherit pkgs;} categoryDefinitions packageDefinitions defaultPackageName)
+    // {
       pname = defaultPackageName;
       version = pkgs.neovim.version;
     };

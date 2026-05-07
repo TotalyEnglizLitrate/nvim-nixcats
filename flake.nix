@@ -23,20 +23,29 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixCats, ... }@inputs: let
+  outputs = {
+    self,
+    nixpkgs,
+    nixCats,
+    ...
+  } @ inputs: let
     utils = nixCats.utils;
     luaPath = ./.;
     forEachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
   in {
     packages = forEachSystem (system: let
-      pkgs = import nixpkgs { inherit system; config = { allowUnfree = true; }; };
-    in import ./default.nix (inputs // { inherit pkgs; }));
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {allowUnfree = true;};
+      };
+    in
+      import ./default.nix (inputs // {inherit pkgs;}));
 
     devShells = forEachSystem (system: let
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {inherit system;};
     in {
       default = pkgs.mkShell {
-        packages = with pkgs; [ nixd ];
+        packages = with pkgs; [nixd];
       };
     });
   };
